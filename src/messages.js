@@ -4,9 +4,13 @@ import { IconSearch } from '@tabler/icons';
 import MessageBox from './messageBox';
 import MessageIn from './messageIn';
 import { useState } from 'react';
+import data from './output.json'
 
 function Messages() {
-    const [curPerson, setCurPerson] = useState('asdf')
+    for(let key in data){
+        console.log(key);
+    }
+    const [curPerson, setCurPerson] = useState('')
     return (
         <div>
             <Box
@@ -29,6 +33,9 @@ function Messages() {
                             style={{ marginBottom: '2rem' }}
                         />
                         <MessageBox
+                            name="Jason Calacanis"
+                            message="You lov"
+                            time="2022-10-03"
                         />
                     </div>
                 ) : (

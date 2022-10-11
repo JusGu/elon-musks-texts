@@ -2,7 +2,6 @@ import './App.css';
 import { Text, Box, Avatar  } from '@mantine/core';
 import { IconChevronLeft, IconInfoCircle, IconHeart, IconThumbUp } from '@tabler/icons';
 import jason from './pfps/jason.jpg';
-
 function MessageIn() {
     return (
         <div>
