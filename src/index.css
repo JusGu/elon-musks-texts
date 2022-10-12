@@ -146,3 +146,32 @@ code {
 .myTextLast{
   border-bottom-right-radius: 0rem;
 }
+
+.sideBar{
+  position: absolute;
+  right: 12px;
+  top: 24px;
+}
+
+.iconWrapper{
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #f6c844;
+  cursor: pointer;
+}
+
+.iconWrapper:hover{
+  filter: brightness(0.9);
+  transition: all 0.5s ease;
+}
+
+.linkWrapper{
+  color: white;
+  text-decoration: none;
+  border: 1px solid red;
+}
