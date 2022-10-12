@@ -58,7 +58,7 @@ function App() {
         >
           <Accordion.Item title="What is this?" value='1'>
             <Accordion.Control>Background</Accordion.Control>
-            <Accordion.Panel>On Sept 29th 2022, Delaware’s Court of Chancery released hundreds of text messages to and from Elon Musk. However, Delaware’s Court of Chancery put all these text on a table that was printed, redacted and scanned rendering them basically unreadable. I spent days scanning through these documents to build this website so that you can read these text messages like actual text messages.</Accordion.Panel>
+            <Accordion.Panel>On Sept 29th 2022, Delaware’s Court of Chancery released hundreds of text messages to and from Elon Musk. However, Delaware’s Court of Chancery put all these text on a table that was printed, redacted and scanned - rendering them basically unreadable. I spent days scanning through these documents to build this website so that you can read these text messages like actual text messages.</Accordion.Panel>
           </Accordion.Item>
           <Accordion.Item title="What is this website?" value='2'>
             <Accordion.Control>What is this website?</Accordion.Control>
@@ -73,13 +73,17 @@ function App() {
             <Accordion.Panel>I used a combination of OCR (Optical Character Recognition) and manual transcription to convert the scanned images of the text messages into text that can be easily read.</Accordion.Panel>
           </Accordion.Item>
           <Accordion.Item title="Can I search for people?" value='5'>
-            <Accordion.Control>Can I search for people?</Accordion.Control>
-            <Accordion.Panel>Yes! There is a search bar at the top of the page where you can search for specific people?</Accordion.Panel>
+            <Accordion.Control>What took you so long to release this?</Accordion.Control>
+            <Accordion.Panel>I was studying for my midterms. And I wanted to make sure that the text messages were correctly transcribed before releasing the website.</Accordion.Panel>
           </Accordion.Item>
           <Accordion.Item title="For Media: how can I share this website?" value='6'>
-            <Accordion.Control>For Media: how can I share this website?</Accordion.Control>
+            <Accordion.Control>How can I get in touch with you?</Accordion.Control>
             <Accordion.Panel>Please email me at <a style={{ color: 'white' }} href="mailto:jjwgu@uwaterloo.ca">jjwgu@uwaterloo</a>
             </Accordion.Panel>
+          </Accordion.Item>
+          <Accordion.Item title="I found an error in the transcription, what should I do?" value='7'>
+            <Accordion.Control>I found an error in the transcription, what should I do?</Accordion.Control>
+            <Accordion.Panel>Please email me at <a style={{ color: 'white' }} href="mailto:jjwgu@uwaterloo.ca">jjwgu@uwaterloo</a> and I will fix it as soon as possible.</Accordion.Panel>
           </Accordion.Item>
         </Accordion>
       </Modal>
