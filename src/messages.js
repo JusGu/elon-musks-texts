@@ -35,7 +35,6 @@ function Messages() {
     data_array.sort(function(a, b) {
         return new Date(convertDate(b.last_message_date)) - new Date(convertDate(a.last_message_date));
     });
-    console.log(data_array);
     return (
         <div>
             <Box
@@ -61,7 +60,7 @@ function Messages() {
                     />
                     {data_array.filter((person) => person.name.toLowerCase().includes(search.toLowerCase())).map((person) => (
                         (
-                            <div key={person.name} onClick={() => setCurPerson(person.name)}>
+                            <div key={person.name} onClick={() => setCurPerson(person)}>
                                 <MessageBox
                                     name={person.name}
                                     message={person.last_message}
@@ -73,7 +72,13 @@ function Messages() {
                     ))}
                 </div>)
                     : (
-                        <MessageIn />
+                        <MessageIn 
+                            name={curPerson.name}
+                            participants={curPerson.participants}
+                            group={curPerson.group}
+                            setCurPerson={setCurPerson}
+                            messages={data[curPerson.name]['messages']}
+                        />
                     )}
             </Box>
         </div>

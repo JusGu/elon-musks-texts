@@ -21,6 +21,7 @@ code {
   padding: 1rem;
   padding-top: 0.5rem;
   position: relative;
+  cursor: pointer;
 }
 .messageBox:hover{
   background-color: rgba(255, 255, 255, 0.1);
@@ -89,6 +90,8 @@ code {
   background-color: #25262b;
   padding: 0.5rem;
   width: fit-content;
+  overflow-wrap: break-word;
+  max-width: 100%;
   border-radius: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -142,9 +145,26 @@ code {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 .myTextLast{
   border-bottom-right-radius: 0rem;
+}
+
+.myReaction{
+  align-self: flex-end;
+  background-color: rgba(34, 138, 230, 0.8);
+  display: flex;
+  align-items: center;
+  margin-top: -1rem;
+  font-size: 12px;
+  padding: 0.5rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #1a1b1e;
+
 }
 
 .sideBar{
@@ -174,4 +194,8 @@ code {
   color: white;
   text-decoration: none;
   border: 1px solid red;
+}
+
+.messageHeaderBack{
+  cursor: pointer;
 }

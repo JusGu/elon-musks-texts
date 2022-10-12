@@ -24,7 +24,6 @@ function AvatarCustom(props) {
             return participant;
         }
     });
-    console.log(displayed_participants);
     const truncatedParticipants = [];
     if (participants.length > 1) {
         truncatedParticipants.push(displayed_participants[0]);
@@ -33,8 +32,6 @@ function AvatarCustom(props) {
         truncatedParticipants.push(displayed_participants[0]);
     }
     let additional = participants.length - 2;
-
-    console.log(truncatedParticipants);
 
     return (
         <Tooltip.Group openDelay={300} closeDelay={100}>
@@ -55,7 +52,7 @@ function AvatarCustom(props) {
                     <Tooltip label={(participants).slice(2).join(', ')}>
                         <Avatar
                             radius={'xl'}
-                            style={{ width: '50px', height: '50px' }}
+                            style={{ width: '50px', height: '50px', border: 'none'}}
                             key={additional}
                         >
                             +{additional}
