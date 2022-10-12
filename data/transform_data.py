@@ -1,3 +1,4 @@
+from asyncore import write
 from openpyxl import load_workbook
 import os
 import json
@@ -12,8 +13,11 @@ headers = [cell.value for cell in next(rows)]
 
 # store data as dictionary to be exported as json later on
 data = {}
+# store all participants in a set
+participants_data = set()
 # relative file path to store json file
-export_path = os.path.dirname(os.path.abspath(__file__)) + '/output.json'
+export_path_data = os.path.dirname(os.path.abspath(__file__)) + '/output.json'
+export_path_participants = os.path.dirname(os.path.abspath(__file__)) + '/participants.json'
 
 
 for row in rows:
@@ -33,6 +37,9 @@ for row in rows:
         participants_array = list(filter(lambda x: x != 'Self', participants_array))
         if len(participants_array) == 0:
             continue
+        # add participants to set
+        for participant in participants_array:
+            participants_data.add(participant)
         # turn participants_array into string
         participants_string = ", ".join(participants_array)
         if participants_string not in data:
@@ -56,7 +63,28 @@ for row in rows:
                 "reactions": reactions
             })
 
-def writeToJson():
-    with open(export_path, 'w') as outfile:
-        json.dump(data, outfile)
-writeToJson()
+def writeToJson(data_to_write, path):
+    with open(path, 'w') as outfile:
+        json.dump(data_to_write, outfile)
+writeToJson(data, export_path_data)
+
+def finetine_participants_data(participants_data, names_to_replace, replacement_names):
+    for i in range(len(names_to_replace)):
+        if names_to_replace[i] in participants_data:
+            participants_data.remove(names_to_replace[i])
+            participants_data.add(replacement_names[i])
+    return participants_data
+
+# replace Satya with Satya Nadella
+# replace Sam BF with Sam Bankman-Fried
+# replace Parag with Parag Agrawal
+# replace BL Lee with Bill Gurley
+# replace Mathias D\u00f6pfner with Mathias Dopfner
+# replace Kyle with Unknown
+# replace TJ with Unknown
+# replace James Musk with Unknown
+participants_data = finetine_participants_data(participants_data, ["Satya", "Sam BF", "Parag", "BL Lee", "Mathias D\u00f6pfner", "Kyle", "TJ", "James Musk"], ["Satya Nadella", "Sam Bankman-Fried", "Parag Agrawal", "Bill Gurley", "Mathias Dopfner", "Unknown", "Unknown", "Unknown"])
+
+writeToJson({"participants": list(participants_data)}, export_path_participants)
+print("Done")
+

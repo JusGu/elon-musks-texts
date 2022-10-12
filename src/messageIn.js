@@ -1,7 +1,7 @@
 import './App.css';
 import { Text, Box, Avatar  } from '@mantine/core';
 import { IconChevronLeft, IconInfoCircle, IconHeart, IconThumbUp } from '@tabler/icons';
-import jason from './pfps/jason.jpg';
+
 function MessageIn() {
     return (
         <div>
@@ -9,7 +9,7 @@ function MessageIn() {
                 <Box className='messageHeaderInner'>
                     <IconChevronLeft />
 
-                    <Avatar src={jason} alt="jason" radius="xl" style={{ width: '50px', height: '50px'}} />
+                    <Avatar alt="jason" radius="xl" style={{ width: '50px', height: '50px'}} />
                     <IconInfoCircle />
                 </Box>
                 <Text>Jason Calacanis</Text>
