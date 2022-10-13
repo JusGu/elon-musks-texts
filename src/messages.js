@@ -11,8 +11,8 @@ function Messages() {
     const [search, setSearch] = useState('');
     let data_array = [];
     for (let key in data) {
-        data_array.push({ 
-            name: key, 
+        data_array.push({
+            name: key,
             group: data[key]['group'],
             last_message: data[key]['last_message'],
             last_message_date: data[key]['last_message_date'],
@@ -29,35 +29,28 @@ function Messages() {
         let hour = parseInt(hour_minute_second[0]);
         let minute = parseInt(hour_minute_second[1]);
         let second = parseInt(hour_minute_second[2]);
-        let date_obj = new Date(year, month, day, hour, minute, second).toLocaleString("en-US", {timeZone: "America/Chicago"});
-        return date_obj; 
+        let date_obj = new Date(year, month, day, hour, minute, second).toLocaleString("en-US", { timeZone: "America/Chicago" });
+        return date_obj;
     }
-    data_array.sort(function(a, b) {
+    data_array.sort(function (a, b) {
         return new Date(convertDate(b.last_message_date)) - new Date(convertDate(a.last_message_date));
     });
     return (
         <div>
             <Box
-                sx={() => ({
-                    border: '1px solid #25262b',
-                    width: '500px',
-                    padding: '2rem',
-                    height: '800px',
-                    overflow: 'auto',
-                    borderRadius: '10px',
-                })
-                }
                 className="messages"
             >
                 {!curPerson ? (<div>
-                    <Input
-                        icon={<IconSearch />}
-                        placeholder="Search"
-                        style={{ marginBottom: '2rem' }}
-                        onChange={(e) => {
-                            setSearch(e.target.value);
-                        }}
-                    />
+                    <Box className='searchBar'>
+                        <Input
+                            icon={<IconSearch />}
+                            placeholder="Search"
+                            onChange={(e) => {
+                                setSearch(e.target.value);
+                            }}
+                        />
+                    </Box>
+
                     {data_array.filter((person) => person.name.toLowerCase().includes(search.toLowerCase())).map((person) => (
                         (
                             <div key={person.name} onClick={() => setCurPerson(person)}>
@@ -72,11 +65,12 @@ function Messages() {
                     ))}
                 </div>)
                     : (
-                        <MessageIn 
+                        <MessageIn
                             name={curPerson.name}
                             participants={curPerson.participants}
                             group={curPerson.group}
                             setCurPerson={setCurPerson}
+                            setSearch={setSearch}
                             messages={data[curPerson.name]['messages']}
                         />
                     )}

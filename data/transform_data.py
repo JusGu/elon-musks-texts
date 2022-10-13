@@ -36,7 +36,7 @@ for row in rows:
         # filter out participants that are called 'self'
         participants_array = list(filter(lambda x: x != 'Self', participants_array))
         if len(participants_array) == 0:
-            continue
+            participants_array = ['Unknown']
         # add participants to set
         for participant in participants_array:
             participants_data.add(participant)
