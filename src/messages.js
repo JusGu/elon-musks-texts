@@ -1,12 +1,14 @@
 import './App.css';
 import { Box, Input } from '@mantine/core';
-import { IconSearch } from '@tabler/icons';
+import { IconSearch, IconQuestionMark } from '@tabler/icons';
 import MessageBox from './messageBox';
 import MessageIn from './messageIn';
 import { useState } from 'react';
 import data from './output.json'
 
-function Messages() {
+
+function Messages(props) {
+    const {setModalOpened} = props;
     const [curPerson, setCurPerson] = useState('');
     const [search, setSearch] = useState('');
     let data_array = [];
@@ -48,7 +50,11 @@ function Messages() {
                             onChange={(e) => {
                                 setSearch(e.target.value);
                             }}
+                            sx={{ width: '100%' }}
                         />
+                        <div className='iconWrapperSmall' onClick={() => setModalOpened(true)}>
+                            <IconQuestionMark size={50} color="#1a1b1e" />
+                        </div>
                     </Box>
 
                     {data_array.filter((person) => person.name.toLowerCase().includes(search.toLowerCase())).map((person) => (

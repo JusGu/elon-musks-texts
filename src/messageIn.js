@@ -44,7 +44,7 @@ function MessageIn(props) {
         return new Date(convertDate(a.date)) - new Date(convertDate(b.date));
     });
     return (
-        <div>
+        <div className="message-in">
             <Box className='messageHeader'>
                 <Box className='messageHeaderInner'>
                     <div
@@ -62,7 +62,7 @@ function MessageIn(props) {
                     <IconInfoCircle style={{ visibility: 'hidden' }} />
                 </Box>
                 <Text>
-                    {name.length > 60 ? name.substring(0, 57) + '...' : name}
+                    {name.length > 40 ? name.substring(0, 37) + '...' : name}
                 </Text>
             </Box>
             <Box className='textContainer'>
@@ -98,16 +98,16 @@ function MessageIn(props) {
                     }
                     if (message.sender && message.sender.toLowerCase().includes('self')) {
                         return (
-                            <div key={i}>
+                            <div key={i} className='myMessageContainer'>
                                 {showDate ? <Box className='dateText'><Text>{convertDateString(message.date)}</Text></Box> : null}
                                 <Box className='myTextLast'>
                                     <Text>{message.content}</Text>
                                 </Box>
-                                {showReaction === 'love' ? <Tooltip label='Love' position = 'right  '><Box className='myReaction'><IconHeart size={12} fill={'red'} color={'red'} /></Box></Tooltip> : null}
-                                {showReaction === 'like' ? <Tooltip label='Like' position='right'><Box className='myReaction'><IconThumbUp size={12} fill={'yellow'} color={'yellow'} /></Box></Tooltip> : null}
-                                {showReaction === 'laugh' ? <Tooltip label='Laugh' position='right'><Box className='myReaction'><IconMoodCrazyHappy size={12} color={'white'} /></Box></Tooltip> : null}
-                                {showReaction === 'emphasize' ? <Tooltip label='Emphasize' position='right'><Box className='myReaction'><IconUserExclamation size={12} color={'white'} /></Box></Tooltip> : null}
-                                {showReaction === 'dislike' ? <Tooltip label='Dislike' position='right'><Box className='myReaction'><IconThumbDown size={12} fill={'yellow'} color={'yellow'} /></Box></Tooltip> : null}
+                                {showReaction === 'love' ? <Tooltip  events= {{touch: true, focus: true}} label='Love' position = 'right  '><Box className='myReaction'><IconHeart size={12} fill={'red'} color={'red'} /></Box></Tooltip> : null}
+                                {showReaction === 'like' ? <Tooltip  events= {{touch: true, focus: true}} label='Like' position='right'><Box className='myReaction'><IconThumbUp size={12} fill={'yellow'} color={'yellow'} /></Box></Tooltip> : null}
+                                {showReaction === 'laugh' ? <Tooltip  events= {{touch: true, focus: true}} label='Laugh' position='right'><Box className='myReaction'><IconMoodCrazyHappy size={12} color={'white'} /></Box></Tooltip> : null}
+                                {showReaction === 'emphasize' ? <Tooltip  events= {{touch: true, focus: true}} label='Emphasize' position='right'><Box className='myReaction'><IconUserExclamation size={12} color={'white'} /></Box></Tooltip> : null}
+                                {showReaction === 'dislike' ? <Tooltip  events= {{touch: true, focus: true}} label='Dislike' position='right'><Box className='myReaction'><IconThumbDown size={12} fill={'yellow'} color={'yellow'} /></Box></Tooltip> : null}
                             </div>
                         )
                     } else {
@@ -123,11 +123,11 @@ function MessageIn(props) {
                                 <Box className='otherTextLast'>
                                     <Text>{message.content}</Text>
                                 </Box>
-                                {showReaction === 'love' ? <Tooltip label='Love' position='left'><Box className='otherReaction'><IconHeart size={12} fill={'red'} color={'red'} /></Box></Tooltip> : null}
-                                {showReaction === 'like' ? <Tooltip label='Like' position='left'><Box className='otherReaction'><IconThumbUp size={12} fill={'yellow'} color={'yellow'} /></Box></Tooltip> : null}
-                                {showReaction === 'laugh' ? <Tooltip label='Laugh' position='left'><Box className='otherReaction'><IconMoodCrazyHappy size={12} color={'white'} /></Box></Tooltip> : null}
-                                {showReaction === 'emphasize' ? <Tooltip label='Emphasize' position='left'><Box className='otherReaction'><IconUserExclamation size={12} color={'white'} /></Box></Tooltip> : null}
-                                {showReaction === 'dislike' ? <Tooltip label='Dislike' position='left'><Box className='otherReaction'><IconThumbDown size={12} fill={'yellow'} color={'yellow'} /></Box></Tooltip> : null}
+                                {showReaction === 'love' ? <Tooltip  events= {{touch: true, focus: true}} label='Love' position='left'><Box className='otherReaction'><IconHeart size={12} fill={'red'} color={'red'} /></Box></Tooltip> : null}
+                                {showReaction === 'like' ? <Tooltip  events= {{touch: true, focus: true}} label='Like' position='left'><Box className='otherReaction'><IconThumbUp size={12} fill={'yellow'} color={'yellow'} /></Box></Tooltip> : null}
+                                {showReaction === 'laugh' ? <Tooltip  events= {{touch: true, focus: true}} label='Laugh' position='left'><Box className='otherReaction'><IconMoodCrazyHappy size={12} color={'white'} /></Box></Tooltip> : null}
+                                {showReaction === 'emphasize' ? <Tooltip  events= {{touch: true, focus: true}} label='Emphasize' position='left'><Box className='otherReaction'><IconUserExclamation size={12} color={'white'} /></Box></Tooltip> : null}
+                                {showReaction === 'dislike' ? <Tooltip  events= {{touch: true, focus: true}} label='Dislike' position='left'><Box className='otherReaction'><IconThumbDown size={12} fill={'yellow'} color={'yellow'} /></Box></Tooltip> : null}
                             </div>
                         )
                     }

@@ -37,7 +37,7 @@ function AvatarCustom(props) {
         <Tooltip.Group openDelay={300} closeDelay={100}>
             <Avatar.Group spacing="sm">
                 {truncatedParticipants.map((participant) => (
-                    <Tooltip key={participant} label={participant}>
+                    <Tooltip events= {{touch: true, focus: true}} key={participant} label={participant}>
 
                         <Avatar
                             radius={'xl'}
@@ -49,7 +49,7 @@ function AvatarCustom(props) {
                     </Tooltip>
                 ))}
                 {additional > 0 && (
-                    <Tooltip label={(participants).slice(2).join(', ')}>
+                    <Tooltip events= {{touch: true, focus: true}} label={(participants).slice(2).join(', ')}>
                         <Avatar
                             radius={'xl'}
                             style={{ width: '50px', height: '50px', border: 'none'}}

@@ -12,33 +12,21 @@ function App() {
   }
   return (
     <div>
-      <Box
-        sx={(theme) => ({
-          padding: theme.spacing.xl,
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          width: '100%',
-          alignItems: 'center',
-        })
-        }
-      >
-        <Messages />
+      <Box className='wrapper'>
         <div className='sideBar'>
           <div className='iconWrapper' onClick={() => setModalOpened(true)}>
             <IconQuestionMark size={50} color="#1a1b1e" />
           </div>
-          <div 
-          className='iconWrapper' 
-          onClick={() => openInNewTab('https://github.com/JusGu/elon-musks-texts')}
-          style={{background: '#c1c2c5'}}
+          <div
+            className='iconWrapper'
+            onClick={() => openInNewTab('https://github.com/JusGu/elon-musks-texts')}
+            style={{ background: '#c1c2c5' }}
           >
             <IconBrandGithub size={50} color="#1a1b1e" />
           </div>
 
         </div>
-
-
+        <Messages setModalOpened = {setModalOpened}/>
       </Box>
       <Modal
         title="About"
