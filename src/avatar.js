@@ -25,13 +25,16 @@ function AvatarCustom(props) {
         }
     });
     const truncatedParticipants = [];
-    if (participants.length > 1) {
+    let additional = 0;
+    if (participants.length > 2) {
+        truncatedParticipants.push(displayed_participants[0]);
+        additional = participants.length - 1;
+    } else if (participants.length === 2) {
         truncatedParticipants.push(displayed_participants[0]);
         truncatedParticipants.push(displayed_participants[1]);
     } else {
         truncatedParticipants.push(displayed_participants[0]);
     }
-    let additional = participants.length - 2;
 
     return (
         <Tooltip.Group openDelay={300} closeDelay={100}>
@@ -49,7 +52,7 @@ function AvatarCustom(props) {
                     </Tooltip>
                 ))}
                 {additional > 0 && (
-                    <Tooltip events= {{touch: true, focus: true}} label={(participants).slice(2).join(', ')}>
+                    <Tooltip events= {{touch: true, focus: true}} label={(participants).slice(1).join(', ')}>
                         <Avatar
                             radius={'xl'}
                             style={{ width: '50px', height: '50px', border: 'none'}}

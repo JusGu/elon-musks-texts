@@ -9,8 +9,8 @@ function MessageBox(props) {
     let message_array = message.split(" ");
     if (message_array[0].length > 40 || message_array[1]?.length > 40 || message_array[2]?.length > 40) {
         displayed_message = message.substring(0, 37) + "...";
-    } else if (message.length > 77) {
-        displayed_message = message.substring(0, 74) + "...";
+    } else if (message.length > 67) {
+        displayed_message = message.substring(0, 64) + "...";
     } else {
         displayed_message = message;
     }
@@ -25,7 +25,7 @@ function MessageBox(props) {
                     <div style={{ flexGrow: '1' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <Text style={{ fontSize: '15px', fontWeight: 'bold' }}>
-                                {name.length > 20 ? name.substring(0, 17) + '...' : name}
+                                {name.length > 15 ? name.substring(0, 12) + '...' : name}
                             </Text>
                             <Text className='messageContent' style={{ fontSize: '12px'}}>
                                 {displayed_time}
