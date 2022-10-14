@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/elon-musks-texts/static/css/main.c96407a5.css",
-    "main.js": "/elon-musks-texts/static/js/main.5a7e33fc.js",
+    "main.css": "/elon-musks-texts/static/css/main.3e848813.css",
+    "main.js": "/elon-musks-texts/static/js/main.22cea4fc.js",
     "static/js/787.8f590407.chunk.js": "/elon-musks-texts/static/js/787.8f590407.chunk.js",
     "index.html": "/elon-musks-texts/index.html",
-    "main.c96407a5.css.map": "/elon-musks-texts/static/css/main.c96407a5.css.map",
-    "main.5a7e33fc.js.map": "/elon-musks-texts/static/js/main.5a7e33fc.js.map",
+    "main.3e848813.css.map": "/elon-musks-texts/static/css/main.3e848813.css.map",
+    "main.22cea4fc.js.map": "/elon-musks-texts/static/js/main.22cea4fc.js.map",
     "787.8f590407.chunk.js.map": "/elon-musks-texts/static/js/787.8f590407.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c96407a5.css",
-    "static/js/main.5a7e33fc.js"
+    "static/css/main.3e848813.css",
+    "static/js/main.22cea4fc.js"
   ]
 }
